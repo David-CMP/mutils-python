@@ -28,9 +28,11 @@ def bin2str(x: str) -> str:
         int_.bit_length(), "big"
     ).decode(errors="ignore").replace("\x00", "")
 
+
 def bin2int(x: str) -> int:
     """Same as `int(x, 2)`"""
     return int(x, 2)
+
 
 def bin2hex(x: str) -> str:
     """The hexadecimal representation of the binary value. Similar to
