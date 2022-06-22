@@ -100,3 +100,22 @@ def bytes2int(x: bytes) -> int:
 
 def bytes2hex(x: bytes) -> str:
     return x.hex()
+
+
+def get_bit(x: int, pos: int) -> bool:
+    return ((x & (1 << pos)) != 0)
+
+
+def change_bit(x: int, pos: int, to: bool | int) -> int:
+    to = int(bool(int(to)))
+    return [(x & ~(1 << pos)), (x | (1 << pos))][to]
+
+
+def get_lsb(x: int) -> bool:
+    return ((x & 0b1) != 0)
+
+
+def change_lsb(x: int, to: bool | int) -> int:
+    to = int(bool(int(to)))
+    return [(x & ~0b1), (x | 0b1)][to]
+
